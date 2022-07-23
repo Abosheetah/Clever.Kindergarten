@@ -1,0 +1,37 @@
+﻿@page "/counter"
+
+<PageTitle>@car.Name</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+<br>
+<h1>@car.Name</h1>
+<br>
+<input type="text" @bind-value="@car.Name" @bind-value:event="oninput">
+
+@code {
+    private int currentCount = 0;
+
+    Car car = new Car() {Id = 1 , Color = "Red"}; 
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+
+
+
+    class Car
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "Fiat";
+
+        public string? Color { get; set; }
+
+    }
+}

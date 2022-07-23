@@ -1,0 +1,50 @@
+﻿@page "/fetchdata"
+
+<PageTitle>Weather forecast</PageTitle>
+
+@using Clever.Kindergarten.Data.DBServices
+@using Data.Models
+@using System.Data
+@inject HobbyServices HobbyServices
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (hobbies == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الكود</th>
+                <th>الهواية</th>               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Hobby hobby in hobbies)
+            {
+                <tr>
+                    <td>@hobby.Id</td>
+                    <td>@hobby.Name</td>     
+                    <td>@(hobby.isAccessible? "قابل للتحقق" : ".غير قابل للتحقق")</td>               
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Hobby> hobbies;
+   
+        protected override void OnInitialized()
+        {
+            hobbies = HobbyServices.GetAllData();
+        }
+}
+
+
+
