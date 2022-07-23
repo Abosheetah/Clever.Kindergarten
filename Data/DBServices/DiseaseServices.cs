@@ -2,25 +2,25 @@ using System.Data;
 using System.Data.SqlClient;
 using Clever.Kindergarten.Data.AbstractionModels;
 using Clever.Kindergarten.Data.ConnectionDB;
-using Clever.Kindergarten.Data.Models;
+using Clever.Kindergarten.Data.Models.Disease_;
 
 namespace Clever.Kindergarten.Data.DBServices
 {
-    class HobbyServices : AppConnectionBase,CleverOperations<Hobby>
+    public class DiseaseServices : AppConnectionBase, CleverOperations<Disease>
     {
-        public void Add(Hobby model)
+        public void Add(Disease model)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Hobby model)
+        public void Delete(Disease model)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Hobby>? GetAllData()
+        public IEnumerable<Disease> GetAllData()
         {
-        
+            
         if (con.State == System.Data.ConnectionState.Open)
         {
             con.Close();
@@ -31,20 +31,21 @@ namespace Clever.Kindergarten.Data.DBServices
             SqlCommand cmd ;
             DataSet ds = new DataSet();
             con.Open();
-            cmd = new SqlCommand("SELECT Id,Name,isAccessible FROM dbo.Hobbies",con);            
+            cmd = new SqlCommand("SELECT Id,Name,EatForbidden,Description FROM dbo.Diseases",con);            
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            IList<Hobby> hobbies = new List<Hobby>() ;
-            Hobby hobby ;
+            IList<Disease> diseases = new List<Disease>() ;
+            Disease disease ;
             
             foreach (DataRow dr in dt.Rows)
             {
-                hobby = new Hobby{ Id = Convert.ToInt32(dr[0]) , Name = Convert.ToString(dr[1]) ?? "Null",isAccessible = Convert.ToBoolean(dr[2])  };
-                hobbies.Add(hobby);
+                disease = new Disease{ Id = Convert.ToInt32(dr[0]) , Name = Convert.ToString(dr[1]) ?? "Null"
+                , EatForbidden = Convert.ToString(dr[2]) , Description = Convert.ToString(dr[3])  };
+                diseases.Add(disease);
             }
             
-            return hobbies;
+            return diseases;
                       
         }
         catch (System.Exception e) 
@@ -56,12 +57,12 @@ namespace Clever.Kindergarten.Data.DBServices
         }   
         }
 
-        public Hobby GetById(int id)
+        public Disease GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Hobby model)
+        public void Update(Disease model)
         {
             throw new NotImplementedException();
         }

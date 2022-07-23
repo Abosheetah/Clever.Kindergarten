@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 
 namespace Clever.Kindergarten.Data.ConnectionDB
 {
-    class AppConnectionBase 
+    public class AppConnectionBase 
     {
         public SqlConnection con = new SqlConnection(); 
 

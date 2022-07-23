@@ -2,7 +2,7 @@ using Clever.Kindergarten.Data.Models.User_;
 
 namespace Clever.Kindergarten.Data.Models.BaseClass
 {
-    internal class Record
+    public class Record
     {
         public int? AddedUserId { get; set; }
         public int? UpdatedUserId { get; set; }
