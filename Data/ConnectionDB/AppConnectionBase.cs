@@ -7,7 +7,7 @@ namespace Clever.Kindergarten.Data.ConnectionDB
         public SqlConnection con = new SqlConnection(); 
 
         public AppConnectionBase(){
-            con.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Clever.ChildCustodyDB;Integrated Security=True";
+            con.ConnectionString = $"Data Source=.\\SQLEXPRESS;Initial Catalog=Clever.ChildCustodyDB;Integrated Security=True";
         }
 
     }

@@ -11,6 +11,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<AppConnectionBase>();
 builder.Services.AddSingleton<HobbyServices>();
+builder.Services.AddSingleton<DiseaseServices>();
 
 var app = builder.Build();
 

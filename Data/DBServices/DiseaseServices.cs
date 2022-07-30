@@ -10,7 +10,41 @@ namespace Clever.Kindergarten.Data.DBServices
     {
         public void Add(Disease model)
         {
-            throw new NotImplementedException();
+                 
+        if (con.State == System.Data.ConnectionState.Open)
+        {
+            con.Close();
+        }
+        
+        try
+            {
+                SqlCommand cmd ;
+                DataSet ds = new DataSet();
+                con.Open();
+                cmd = new SqlCommand("Insert Into Diseases (Name,EatForbidden,Description)",con);            
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                IList<Disease> diseases = new List<Disease>() ;
+                Disease disease ;
+                
+                foreach (DataRow dr in dt.Rows)
+                {
+                    disease = new Disease{ Id = Convert.ToInt32(dr[0]) , Name = Convert.ToString(dr[1]) ?? "Null"
+                    , EatForbidden = Convert.ToString(dr[2]) , Description = Convert.ToString(dr[3])  };
+                    diseases.Add(disease);
+                }
+                
+                
+                        
+            }
+            catch (System.Exception e) 
+            {            
+                
+            }
+            finally{
+                con.Close();
+            }  
         }
 
         public void Delete(Disease model)
@@ -19,42 +53,41 @@ namespace Clever.Kindergarten.Data.DBServices
         }
 
         public IEnumerable<Disease> GetAllData()
-        {
-            
+        {            
         if (con.State == System.Data.ConnectionState.Open)
         {
             con.Close();
         }
         
         try
-        {
-            SqlCommand cmd ;
-            DataSet ds = new DataSet();
-            con.Open();
-            cmd = new SqlCommand("SELECT Id,Name,EatForbidden,Description FROM dbo.Diseases",con);            
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            IList<Disease> diseases = new List<Disease>() ;
-            Disease disease ;
-            
-            foreach (DataRow dr in dt.Rows)
             {
-                disease = new Disease{ Id = Convert.ToInt32(dr[0]) , Name = Convert.ToString(dr[1]) ?? "Null"
-                , EatForbidden = Convert.ToString(dr[2]) , Description = Convert.ToString(dr[3])  };
-                diseases.Add(disease);
+                SqlCommand cmd ;
+                DataSet ds = new DataSet();
+                con.Open();
+                cmd = new SqlCommand("SELECT ID,Name,EatForbidden,Description FROM Diseases",con);            
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                IList<Disease> diseases = new List<Disease>() ;
+                Disease disease ;
+                
+                foreach (DataRow dr in dt.Rows)
+                {
+                    disease = new Disease{ Id = Convert.ToInt32(dr[0]) , Name = Convert.ToString(dr[1]) ?? "Null"
+                    , EatForbidden = Convert.ToString(dr[2]) , Description = Convert.ToString(dr[3])  };
+                    diseases.Add(disease);
+                }
+                
+                return diseases;
+                        
             }
-            
-            return diseases;
-                      
-        }
-        catch (System.Exception e) 
-        {            
-            return null;
-        }
-        finally{
-            con.Close();
-        }   
+            catch (System.Exception e) 
+            {            
+                return null;
+            }
+            finally{
+                con.Close();
+            }   
         }
 
         public Disease GetById(int id)
