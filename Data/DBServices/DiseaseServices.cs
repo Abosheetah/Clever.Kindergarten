@@ -18,29 +18,24 @@ namespace Clever.Kindergarten.Data.DBServices
         
         try
             {
-                SqlCommand cmd ;
-                DataSet ds = new DataSet();
+                SqlCommand cmd ;                
                 con.Open();
-                cmd = new SqlCommand("Insert Into Diseases (Name,EatForbidden,Description)",con);            
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                IList<Disease> diseases = new List<Disease>() ;
-                Disease disease ;
-                
-                foreach (DataRow dr in dt.Rows)
+                cmd = new SqlCommand($"Insert Into Diseases (Name,EatForbidden,Description) values ('{model.Name}','{model.EatForbidden}','{model.Description}')",con);            
+
+                if (cmd.ExecuteNonQuery() > 0)
                 {
-                    disease = new Disease{ Id = Convert.ToInt32(dr[0]) , Name = Convert.ToString(dr[1]) ?? "Null"
-                    , EatForbidden = Convert.ToString(dr[2]) , Description = Convert.ToString(dr[3])  };
-                    diseases.Add(disease);
+                    Console.WriteLine("The Data Saved!");
                 }
-                
+                else
+                {
+                    Console.WriteLine("The Data Do Not Saved!");
+                }
                 
                         
             }
             catch (System.Exception e) 
             {            
-                
+                Console.WriteLine($"The Data Do Not Saved! , {e.Message}");
             }
             finally{
                 con.Close();

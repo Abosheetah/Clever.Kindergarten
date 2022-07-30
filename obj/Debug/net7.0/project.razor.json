@@ -12,72 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -1326857205,
-        "Kind": "Components.Component",
-        "Name": "Clever.Kindergarten.Pages.Counter",
-        "AssemblyName": "Clever.Kindergarten",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Clever.Kindergarten.Pages.Counter"
-        }
-      },
-      {
-        "HashCode": 1686978012,
-        "Kind": "Components.Component",
-        "Name": "Clever.Kindergarten.Pages.Counter",
-        "AssemblyName": "Clever.Kindergarten",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Clever.Kindergarten.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Clever.Kindergarten.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1981793023,
-        "Kind": "Components.Component",
-        "Name": "Clever.Kindergarten.Pages.FetchData",
-        "AssemblyName": "Clever.Kindergarten",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Clever.Kindergarten.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": -618561468,
-        "Kind": "Components.Component",
-        "Name": "Clever.Kindergarten.Pages.FetchData",
-        "AssemblyName": "Clever.Kindergarten",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Clever.Kindergarten.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Clever.Kindergarten.Pages.FetchData",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 1951795670,
         "Kind": "Components.Component",
         "Name": "Clever.Kindergarten.Pages.Index",
@@ -140,6 +74,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Clever.Kindergarten.Pages.Test",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1981793023,
+        "Kind": "Components.Component",
+        "Name": "Clever.Kindergarten.Pages.FetchData",
+        "AssemblyName": "Clever.Kindergarten",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "FetchData"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Clever.Kindergarten.Pages.FetchData"
+        }
+      },
+      {
+        "HashCode": -618561468,
+        "Kind": "Components.Component",
+        "Name": "Clever.Kindergarten.Pages.FetchData",
+        "AssemblyName": "Clever.Kindergarten",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Clever.Kindergarten.Pages.FetchData"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Clever.Kindergarten.Pages.FetchData",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1326857205,
+        "Kind": "Components.Component",
+        "Name": "Clever.Kindergarten.Pages.Counter",
+        "AssemblyName": "Clever.Kindergarten",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Counter"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Clever.Kindergarten.Pages.Counter"
+        }
+      },
+      {
+        "HashCode": 1686978012,
+        "Kind": "Components.Component",
+        "Name": "Clever.Kindergarten.Pages.Counter",
+        "AssemblyName": "Clever.Kindergarten",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Clever.Kindergarten.Pages.Counter"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Clever.Kindergarten.Pages.Counter",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

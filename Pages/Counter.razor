@@ -1,5 +1,7 @@
 ﻿@page "/counter"
-
+@using Clever.Kindergarten.Data.DBServices
+@using Data.Models.Disease_
+@inject DiseaseServices diseaseServices
 <PageTitle>@car.Name</PageTitle>
 
 <h1>Counter</h1>
@@ -21,6 +23,7 @@
     private void IncrementCount()
     {
         currentCount++;
+        diseaseServices.Add(new Disease(){Name = "T" , Description = "D" , EatForbidden = "E"});
     }
 
 
