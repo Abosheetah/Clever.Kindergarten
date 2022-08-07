@@ -32,3 +32,4 @@ C:\Users\abosh\OneDrive\Desktop\Clever.Kindergarten\bin\Debug\net7.0\runtimes\wi
 C:\Users\abosh\OneDrive\Desktop\Clever.Kindergarten\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\abosh\OneDrive\Desktop\Clever.Kindergarten\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\abosh\OneDrive\Desktop\Clever.Kindergarten\obj\Debug\net7.0\Clever.Kindergarten.csproj.CopyComplete
+C:\Users\abosh\OneDrive\Desktop\Clever.Kindergarten\obj\Debug\net7.0\scopedcss\Pages\Counter.razor.rz.scp.css

@@ -1,4 +1,4 @@
-﻿@page "/fetchdata"
+@page "/disease/main"
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -8,9 +8,11 @@
 @using Data.Models
 @inject DiseaseServices diseaseServices
 
-<h1>Weather forecast</h1>
+<h1>قائمة أمراض الأطفال</h1>
+<div>
+    <a href="disease/add">إضافة جديد</a>
+</div>
 
-<p>This component demonstrates fetching data from a service.</p>
 
 @if (diseases == null)
 {
@@ -24,7 +26,9 @@ else
                 <th>الكود</th>
                 <th>الاسم</th>               
                 <th>أطعمة ممنوعة</th>               
-                <th>ملاحظات</th>               
+                <th>ملاحظات</th>     
+                <th></th>          
+                <th></th>          
             </tr>
         </thead>
         <tbody>
@@ -34,7 +38,11 @@ else
                     <td>@disease.Id</td>
                     <td>@disease.Name</td>     
                     <td>@(disease.EatForbidden)</td>               
-                    <td>@(disease.Description)</td>               
+                    <td>@(disease.Description)</td>   
+                    <div>
+                        <a href="disease/edit/@disease.Id" style="margin-left: 10px;">تعديل</a>
+                        <a href="disease/delete/@disease.Id"  style="margin-left: 10px;">حذف</a>
+                    </div>                              
                 </tr>
             }
         </tbody>

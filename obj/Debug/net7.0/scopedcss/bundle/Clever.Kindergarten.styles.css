@@ -1,3 +1,32 @@
+/* _content/Clever.Kindergarten/Pages/Counter.razor.rz.scp.css */
+.koko[b-j1q3fbb0dg]{
+    font-size: large;
+    color: brown;
+}
+
+.nono[b-j1q3fbb0dg]{
+    font-size: larger;
+    color: darkgreen;
+}
+
+.myDiv[b-j1q3fbb0dg]{
+    width: 700px;
+    height: 500px;
+    border: solid 2px #b1b1b1; 
+    box-sizing: border-box;   
+}
+.myDiv h1[b-j1q3fbb0dg]{
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    margin: auto;    
+    background-color: aquamarine;
+    border: inherit;
+    vertical-align: sub;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
 /* _content/Clever.Kindergarten/Shared/MainLayout.razor.rz.scp.css */
 .page[b-dgb6olvixm] {
     position: relative;

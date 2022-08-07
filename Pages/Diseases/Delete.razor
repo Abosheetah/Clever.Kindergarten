@@ -1,0 +1,33 @@
+@page "/disease/delete/{Id:int}"
+
+<PageTitle>تعديل بيانات</PageTitle>
+
+@using Clever.Kindergarten.Data.DBServices
+@using Data.Models
+@using System.Data
+@inject DiseaseServices diseaseServices
+@inject NavigationManager nm
+
+<h1>@CountOfChildren</h1>
+
+@code{
+
+
+    [Parameter]
+    public int Id { get; set; }
+
+    public string componentTitle { get; set; } = "حذف بيانات مرض";
+
+    public int CountOfChildren { get; set; }
+  
+    
+    
+        protected override void OnInitialized()
+        {           
+            
+             diseaseServices.Delete(new Disease(){Id = Id});
+
+        }
+
+
+}

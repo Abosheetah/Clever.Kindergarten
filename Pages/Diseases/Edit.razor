@@ -1,0 +1,80 @@
+@page "/disease/add"
+@page "/disease/edit/{Id:int}"
+
+<PageTitle>تعديل بيانات</PageTitle>
+
+@using Clever.Kindergarten.Data.DBServices
+@using Data.Models
+@using System.Data
+@using Data.Models
+@inject DiseaseServices diseaseServices
+@inject NavigationManager nm
+
+<h1>@componentTitle</h1>
+
+
+<EditForm Model="@disease" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <h3>الاسم</h3>
+        <InputText id="name" @bind-Value="disease.Name" />
+    </div>
+    <div>
+        <h3>الأطعمة المحظورة</h3>
+        <InputText id="name" @bind-Value="disease.EatForbidden" />
+    </div>
+    <div>
+        <h3>ملاحظات</h3>
+        <InputTextArea id="name" @bind-Value="disease.Description" />
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+@code {
+    
+    [Parameter]
+    public int Id { get; set; }
+
+    public string componentTitle { get; set; } = "إضافة بيانات مرض";
+
+    Disease disease;
+    
+    
+        protected override void OnInitialized()
+        {           
+            //get data from services class.
+            disease = diseaseServices.GetById(Convert.ToInt32(Id));
+            if (disease.Id > 0)
+            {
+                componentTitle = "تعديل بيانات مرض";  
+            }
+            else
+            {
+                componentTitle = "إضافة بيانات مرض";  
+            }
+                                                        
+        }
+    
+    private void HandleValidSubmit(){
+        if (disease.Id > 0)
+        {
+            //update
+            diseaseServices.Update(disease);
+        }
+        else
+        {
+            //insert
+            diseaseServices.Add(disease);
+        }
+        
+    }
+        
+}
+
+
+
+
+

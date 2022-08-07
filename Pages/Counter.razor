@@ -1,40 +1,54 @@
 ﻿@page "/counter"
 @using Clever.Kindergarten.Data.DBServices
-@using Data.Models.Disease_
+@using Data.Models
 @inject DiseaseServices diseaseServices
-<PageTitle>@car.Name</PageTitle>
+<PageTitle>@model.Name</PageTitle>
 
-<h1>Counter</h1>
+<div class="myDiv">
+    <h1>Counter \!!khkk</h1>
+</div>
 
-<p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<p role="status" class="@Cls">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount" >Click me</button>
 
 
 <br>
-<h1>@car.Name</h1>
+
 <br>
-<input type="text" @bind-value="@car.Name" @bind-value:event="oninput">
+<input type="text" @bind-value="@(model.Name)" @bind-value:event="oninput">
+
+<button onclick="@Enter">save</button>
+
 
 @code {
     private int currentCount = 0;
+    private string Cls = "koko";
 
-    Car car = new Car() {Id = 1 , Color = "Red"}; 
+    public void Enter()
+    {
+        
+            diseaseServices.Add(new Disease(){Name = model.Name , Description = "D" , EatForbidden = "E"});
+            Cls = "nono";
+        
+    }
+
     private void IncrementCount()
     {
         currentCount++;
-        diseaseServices.Add(new Disease(){Name = "T" , Description = "D" , EatForbidden = "E"});
     }
 
 
+    DiseaseDOB model = new DiseaseDOB();
 
 
-    class Car
+
+    private class DiseaseDOB
     {
         public int Id { get; set; }
-        public string Name { get; set; } = "Fiat";
-
-        public string? Color { get; set; }
-
+        public string? Name { get; set; } 
+        public string? Description { get; set; }
+        public string? EatForbidden { get; set; }
     }
 }
